@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Sorter {
     // SELECTION SORT
     /** Sorts the first n objects in an array into ascending order.
@@ -72,6 +74,34 @@ public class Sorter {
 
 // -------------------------------------------------------------------------------
 
+    // COUNTING SORT
+
+    /**
+     * Sorts the array using counting sort
+     * @param a the array to sort
+     * @param n the size of the array
+     */
+    public static void countingSort(int[] a, int n)
+    {
+        int[] temp = new int[n];
+        int[] count = new int[20];
+        for (int i = 0; i < n; i++) {
+            count[a[i]]++;
+        }
+        for (int i = 1; i < 20; i++) {
+            count[i] += count[i - 1];
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            temp[count[a[i]] - 1] = a[i];
+            count[a[i]]--;
+        }
+        for (int i = 0; i < n; i++) {
+            a[i] = temp[i];
+        }
+    }
+
+// -------------------------------------------------------------------------------
+
     private static void swap(int[] a, int i, int j)
     {
         int temp = a[i];
@@ -86,4 +116,5 @@ public class Sorter {
         }
         System.out.println();
     }
+
 }

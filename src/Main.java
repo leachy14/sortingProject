@@ -19,6 +19,14 @@ public class Main {
         Sorter.selectionSort(array2, array2.length);
         // print the array
         System.out.println("Array II after sorting: " + Arrays.toString(array2));
+        // create a third array to sort via counting sort
+        int[] array3 = createArray();
+        // print the array
+        System.out.println("Array III before sorting: " + Arrays.toString(array3));
+        // sort using counting sort
+        Sorter.countingSort(array3, array3.length);
+        // print the array
+        System.out.println("Array III after sorting: " + Arrays.toString(array3));
 
 
     }
@@ -30,7 +38,7 @@ public class Main {
     public static int[] createArray() {
         int[] array = new int[20];
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int)(Math.random() * 100);
+            array[i] = (int)(Math.random() * 10);
         }
         return array;
     }
