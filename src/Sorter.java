@@ -1,5 +1,8 @@
-import java.util.*;
-
+/*
+    Sorter class where I borrowed various sorting methods from ArraySorter and
+    changed their data type to accept int type arrays
+    ALso has the added method to print the array
+ */
 public class Sorter {
     // SELECTION SORT
     /** Sorts the first n objects in an array into ascending order.
